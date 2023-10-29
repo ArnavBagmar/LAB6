@@ -1,15 +1,17 @@
+# Arnav Bagmar
+
 def encode(password):
     encoded_password = ''
     for char in password:
-        new_char = chr(ord(char) + 3)
-        encoded_password += new_char
+        encoded_digit = (int(char) + 3) % 10  # Shift the digit by 3 positions (mod 10 to handle wraparound)
+        encoded_password += str(encoded_digit)
     return encoded_password
 
 
 def main():
     while True:
         print("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit\n")
-        option = int(input("Please enter an option: "
+        option = int(input("Please enter an option: "))
         if option == 1:
             user_password = input("Please enter your password to encode: ")
             encoded_password = encode(user_password)
