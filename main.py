@@ -5,12 +5,6 @@ def encode(password):
         encoded_password += new_char
     return encoded_password
 
-def decode(encoded_password):
-    decoded_password = ''
-    for char in encoded_password:
-        original_char = chr(ord(char) - 3)
-        decoded_password += original_char
-    return decoded_password
 
 def main():
     while True:
